@@ -10,4 +10,3 @@ services:
       - ".:/code"
     environment:
       - NODE_ENV=development
-    maintainer: msb <syedmisbah588@gmail.com>
