@@ -1,11 +1,8 @@
 # Use an official Node runtime as a parent image
-FROM node:14-alpine
+FROM node:lts-alpine3.20
 
 # Set the working directory in the container
 WORKDIR /code
-
-# Set the maintainer label
-LABEL maintainer="msb <syedmisbah588@gmail.com>"
 
 # Copy package.json and install dependencies
 COPY package.json .
