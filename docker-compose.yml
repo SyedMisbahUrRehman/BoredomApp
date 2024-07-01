@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ".:/code"
+    environment:
+      - NODE_ENV=development
+    maintainer: msb <syedmisbah588@gmail.com>
