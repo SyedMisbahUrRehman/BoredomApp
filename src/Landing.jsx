@@ -1,14 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import offlineImage from './assets/offline.svg';
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
   const [battery, setBattery] = useState(null);
   const [is24HourFormat, setIs24HourFormat] = useState(true); // Default to 24-hour format
+  const [offlineImgSrc, setOfflineImgSrc] = useState(null);
 
   useEffect(() => {
     const timerId = setInterval(() => {
       setTime(new Date());
     }, 1000);
+
+    // Store offline image as base64 in local storage
+    const storeOfflineImage = async () => {
+      const response = await fetch(offlineImage);
+      const blob = await response.blob();
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        localStorage.setItem('offlineImage', reader.result);
+        setOfflineImgSrc(reader.result);
+      };
+      reader.readAsDataURL(blob);
+    };
+
+    if (!localStorage.getItem('offlineImage')) {
+      storeOfflineImage();
+    } else {
+      setOfflineImgSrc(localStorage.getItem('offlineImage'));
+    }
 
     // Battery status API
     navigator.getBattery().then(battery => {
@@ -63,6 +83,11 @@ const Clock = () => {
       >
         Toggle Time Format
       </button>
+      {offlineImgSrc && (
+        <div className="mt-4">
+          <img src={offlineImgSrc} alt="Offline" />
+        </div>
+      )}
     </div>
   );
 };
