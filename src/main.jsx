@@ -7,6 +7,13 @@ import InternetSpeedTest from './SpeedTest.jsx';
 import Offline from './Offline.jsx';
 import ErrorPage from "./error-page";
 
+
+
+document.addEventListener('contextmenu', (event) => {
+  event.preventDefault();
+});
+
+
 const router = createBrowserRouter([
   {
     path: "/",
