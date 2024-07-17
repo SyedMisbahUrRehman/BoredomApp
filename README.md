@@ -19,11 +19,11 @@ Welcome to the **Time & Battery Tracker** project! This Vite-powered application
 
 1. **Clone the repository**:
    ```bash
-   git clone [https://github.com/yourusername/time-battery-tracker.git](https://github.com/SyedMisbahUrRehman/ViteTailwindDockerStarter.git)
+   git clone https://github.com/SyedMisbahUrRehman/BoredomApp.git
    ```
 2. **Navigate to the project directory**:
    ```bash
-   cd ViteTailwindDockerStarter
+   cd BoredomApp
    ```
 3. **Install dependencies**:
    ```bash
