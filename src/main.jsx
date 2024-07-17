@@ -21,17 +21,6 @@ const router = createBrowserRouter([
   }
 ]);
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/serviceWorker.js')
-      .then((registration) => {
-        console.log('Service Worker registered with scope:', registration.scope);
-      }, (err) => {
-        console.log('Service Worker registration failed:', err);
-      });
-  });
-}
-
 const App = () => {
   const [isOffline, setIsOffline] = useState(!navigator.onLine);
 
