@@ -65,7 +65,7 @@ const Clock = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-gray-700">
+    <div className="flex flex-col items-center justify-center min-h-screen text-gray-700 bg-gray-100">
       <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
         {formatTime(time)}
       </div>
