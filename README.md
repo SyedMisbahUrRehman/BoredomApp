@@ -36,7 +36,7 @@ To start the development server:
 ```bash
 npm run dev
 ```
-Visit `http://localhost:3000` to see the app in action!
+Visit `http://localhost:5173` to see the app in action!
 
 ### Building for Production
 
