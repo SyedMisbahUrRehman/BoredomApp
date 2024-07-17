@@ -7,5 +7,17 @@ export default {
   theme: {
     extend: {},
   },
-  plugins: [],
+
+
+ plugins: [
+    function({ addBase }) {
+      addBase({
+        '*': {
+          userSelect: 'none',
+        },
+      });
+    },
+  ],
+
+
 }
