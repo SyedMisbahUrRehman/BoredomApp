@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Landing from './Landing.jsx';
-import Home from './Home.jsx';
+import InternetSpeedTest from './SpeedTest.jsx';
 import Offline from './Offline.jsx';
 import ErrorPage from "./error-page";
 
@@ -15,8 +15,8 @@ const router = createBrowserRouter([
 
   },
   {
-    path: "/home",
-    element: <Home />,
+    path: "/speedtest",
+    element: <InternetSpeedTest />,
     
   }
 ]);
