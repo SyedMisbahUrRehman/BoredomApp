@@ -45,7 +45,7 @@ const Clock = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-gray-900">
+    <div className="flex flex-col items-center justify-center min-h-screen text-gray-700">
       <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
         {formatTime(time)}
       </div>
@@ -58,7 +58,7 @@ const Clock = () => {
         </div>
       )}
       <button
-        className="mt-4 bg-gray-400 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded text-sm"
+        className="mt-4 bg-transparent hover:bg-gray-700 text-gray-700 hover:text-white font-bold py-2 px-4 border border-gray-700 rounded"
         onClick={toggleFormat}
       >
         Toggle Time Format
