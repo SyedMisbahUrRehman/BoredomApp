@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import offlineImage from './assets/offline.svg';
+import ClockImage from './assets/clock.svg';
 
 const Clock = () => {
   const [time, setTime] = useState(new Date());
@@ -65,29 +66,29 @@ const Clock = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-gray-700 bg-gray-100">
-      <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
-        {formatTime(time)}
-      </div>
-      <div className="text-xl md:text-3xl lg:text-5xl mt-4">
-        {formatDate(time)}
-      </div>
-      {battery !== null && (
-        <div className="text-lg md:text-2xl lg:text-3xl mt-4">
-          Battery: {battery.toFixed(0)}%
+    <div
+      className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-700"
+    >
+      <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${ClockImage})` }}></div>
+      <div className="relative max-w-screen-sm mx-auto p-4 text-center  ">
+        <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
+          {formatTime(time)}
         </div>
-      )}
-      <button
-        className="mt-4 bg-transparent hover:bg-gray-700 text-gray-700 hover:text-white font-bold py-2 px-4 border border-gray-700 rounded"
-        onClick={toggleFormat}
-      >
-        Toggle Time Format
-      </button>
-      {offlineImgSrc && (
-        <div className="mt-4">
-          <img src={offlineImgSrc} alt="Offline" />
+        <div className="text-xl md:text-3xl lg:text-5xl mt-4">
+          {formatDate(time)}
         </div>
-      )}
+        {battery !== null && (
+          <div className="text-lg md:text-2xl lg:text-3xl mt-4">
+            Battery: {battery.toFixed(0)}%
+          </div>
+        )}
+        <button
+          className="mt-4 bg-transparent hover:bg-gray-700 text-gray-700 hover:text-white font-bold py-2 px-4 border border-gray-700 rounded"
+          onClick={toggleFormat}
+        >
+          Toggle Time Format
+        </button>
+      </div>
     </div>
   );
 };
