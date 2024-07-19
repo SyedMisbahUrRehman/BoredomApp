@@ -74,7 +74,7 @@ const Clock = () => {
       />
 
       <div className="relative max-w-screen-sm mx-auto p-4 text-center">
-        <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
+        <div className="text-5xl md:text-7xl lg:text-9xl font-mono whitespace-nowrap flex items-center justify-center">
           {formatTime(time)}
         </div>
         <div className="text-xl md:text-3xl lg:text-5xl mt-4">
