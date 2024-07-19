@@ -66,16 +66,14 @@ const Clock = () => {
   };
 
   return (
-    <div
-      className="relative flex flex-col items-center justify-center min-h-screen  text-gray-700"
-    >
+    <div className="relative flex flex-col items-center justify-center min-h-screen text-gray-700">
       <img
         src={ClockImage}
         className="absolute inset-0 object-contain w-full h-full opacity-20"
         alt="Clock background"
       />
 
-      <div className="relative max-w-screen-sm mx-auto p-4 text-center  ">
+      <div className="relative max-w-screen-sm mx-auto p-4 text-center">
         <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
           {formatTime(time)}
         </div>
