@@ -13,7 +13,7 @@ const Clock = () => {
       setTime(new Date());
     }, 1000);
 
-    // Store offline image as base64 in local storage
+    // Store offline image as base64 in local storage (unchanged)
     const storeOfflineImage = async () => {
       const response = await fetch(offlineImage);
       const blob = await response.blob();
@@ -31,7 +31,7 @@ const Clock = () => {
       setOfflineImgSrc(localStorage.getItem('offlineImage'));
     }
 
-    // Battery status API
+    // Battery status API (unchanged)
     navigator.getBattery().then(battery => {
       setBattery(battery.level * 100);
 
@@ -67,10 +67,15 @@ const Clock = () => {
 
   return (
     <div
-      className="relative flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-700"
+      className="relative flex flex-col items-center justify-center min-h-screen  text-gray-700"
     >
-      <div className="absolute inset-0 w-full h-full bg-cover bg-center opacity-25" style={{ backgroundImage: `url(${ClockImage})` }}></div>
-      <div className="relative max-w-screen-sm mx-auto p-4 text-center  ">
+      <img
+        src={ClockImage}
+        className="absolute inset-0 object-contain w-full h-full opacity-20"
+        alt="Clock background"
+      />
+
+      <div className="relative max-w-screen-sm mx-auto p-4 text-center  ">
         <div className="text-5xl md:text-7xl lg:text-9xl font-mono">
           {formatTime(time)}
         </div>
